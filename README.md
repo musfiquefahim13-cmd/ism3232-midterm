@@ -45,7 +45,7 @@ Eight catering business-rule functions in the file `business_rules.py`.
 - `main.py` — This file is for executing the catering event report.
 - tests/test_business_rules.py — Automated unit tests.
 A package initializer file for Python tests.
-- `requirements-dev.txt` — Development packages that are required.
+- `requirements.txt` — Development packages that are required.
 Commands and recorded terminal outputs.
 Excludes virtual environments and generated files with: `- .gitignore`
 - `README.md` — Project documentation.
