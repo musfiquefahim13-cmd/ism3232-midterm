@@ -25,7 +25,9 @@ def get_event_discount(guests: int, nonprofit: bool = False) -> float:
     return STANDARD_DISCOUNT
 
 
-def calculate_event_total(guest_price: float, guests: int, nonprofit: bool = False) -> float:
+def calculate_event_total(
+    guest_price: float, guests: int, nonprofit: bool = False
+) -> float:
     """Return discounted food cost with any applicable service fee."""
     food_cost = calculate_food_cost(guest_price, guests)
     discount = get_event_discount(guests, nonprofit)
@@ -49,7 +51,9 @@ def total_booked(events: list) -> float:
     """Return the combined totals of all events."""
     total = 0.0
     for event in events:
-        total += calculate_event_total(event["guest_price"], event["guests"], event["nonprofit"])
+        total += calculate_event_total(
+            event["guest_price"], event["guests"], event["nonprofit"]
+        )
     return total
 
 
@@ -58,15 +62,21 @@ def largest_event(events: list) -> str:
     client = ""
     largest_total = float("-inf")
     for event in events:
-        total = calculate_event_total(event["guest_price"], event["guests"], event["nonprofit"])
+        total = calculate_event_total(
+            event["guest_price"], event["guests"], event["nonprofit"]
+        )
         if total > largest_total:
             largest_total = total
             client = event["client"]
     return client
 
 
-def format_event_line(client: str, total: float, signoff: bool, second_chef: bool) -> str:
+def format_event_line(
+    client: str, total: float, signoff: bool, second_chef: bool
+) -> str:
     """Return one formatted event report line."""
     signoff_text = "yes" if signoff else "no"
     chef_text = "yes" if second_chef else "no"
-    return f"{client}: ${total:.2f} | sign-off: {signoff_text} | second chef: {chef_text}"
+    return (
+        f"{client}: ${total:.2f} | sign-off: {signoff_text} | second chef: {chef_text}"
+    )
