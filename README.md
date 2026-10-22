@@ -51,4 +51,4 @@ Excludes virtual environments and generated files with: `- .gitignore`
 - `README.md` — Project documentation.
 
 ## AI Use Statement
-I  did not use AI for the midterm test all i did i told ai to give a perfect structure from where to start and where to end
+I  did not use AI for the midterm test all i did i told ai to give a perfect structure from where to start and where to end.
